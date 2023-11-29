@@ -7,6 +7,10 @@
   src: url('assets/fonts/Cubano.woff');
 }
 
+.cubano {
+  font-family: 'Cubano';
+}
+
 :root {
   margin : 0;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -16,7 +20,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: rgb(39 39 42);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,15 +29,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
 
@@ -76,28 +71,34 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+
+.purple {
+  color : hsl(288deg, 60%, 42%, 1);
 }
+
+.btn-purple {
+    background-color: hsl(288deg, 60%, 42%, 1);
+    color: #ffffff;
+}
+
+.btn-purple:hover {
+    background-color: hsl(288, 71%, 31%);
+    border-color: hsl(288, 71%, 31%);
+}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-.text-titles {
-  margin-left: 0rem;
-  margin-right: 0rem;
 }
 
 .title {
   line-height: 1.1;
   font-family: 'Cubano';
   text-align: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animate 7s ease infinite;
+  animation: animate 15s ease infinite;
 }
 
 
@@ -106,11 +107,49 @@ button:focus-visible {
   line-height: 1.1;
   font-family: 'Cubano';
   text-align: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+.gradHero{
+  background: hsl(196deg, 72%, 49%, 1);
+  background: linear-gradient(-45deg, hsl(14deg, 82%, 63%, 1), hsl(337deg, 78%, 57%, 1), hsl(196deg, 72%, 49%, 1), hsl(166deg, 72%, 49%, 1));
+  background: -moz-linear-gradient(-45deg, hsl(14deg, 82%, 63%, 1), hsl(337deg, 78%, 57%, 1), hsl(196deg, 72%, 49%, 1), hsl(166deg, 72%, 49%, 1));
+  background: -webkit-linear-gradient(-45deg, hsl(14deg, 82%, 63%, 1), hsl(337deg, 78%, 57%, 1), hsl(196deg, 72%, 49%, 1), hsl(166deg, 72%, 49%, 1));
+
+}
+
+.gradSkills {
+  background: hsla(238, 100%, 71%, 1);
+  background: linear-gradient(45deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
+}
+
+.gradExperience {
+  background: hsla(48, 78%, 82%, 1);
+  background: linear-gradient(45deg, hsla(48, 78%, 82%, 1) 0%, hsla(340, 87%, 59%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(48, 78%, 82%, 1) 0%, hsla(340, 87%, 59%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(48, 78%, 82%, 1) 0%, hsla(340, 87%, 59%, 1) 100%);
+}
+
+.gradEducation {
+  background: hsla(145, 84%, 73%, 1);
+  background: linear-gradient(45deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
+}
+
+.gradProjects {
+  background: hsla(43, 84%, 85%, 1);
+  background: linear-gradient(45deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
+  background: -moz-linear-gradient(45deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
+}
+
+.grad{
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animate 7s ease infinite;
+  animation: animate 15s ease infinite;
 }
 
 .subtitle-colored {
@@ -123,12 +162,8 @@ button:focus-visible {
 .frame {
   padding-top : 7rem;
   display: flex;
-  flex-direction: column-reverse;
-  /*margin-left: 1rem;*/
-  /*margin-right: 1rem;*/
-  align-items: center;
-  z-index: 3;
-  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 
@@ -176,9 +211,6 @@ button:focus-visible {
   justify-content: center;
 }
 
-.links a {
-  color : #FFFFFF
-}
 /* Animations*/
 
 @keyframes animate {
@@ -215,17 +247,10 @@ button:focus-visible {
     /*flex-direction: column;*/
     text-align : left;
     justify-content: left;
+    font-weight : 500;
     /*gap : 0;*/
   }
 
-  .frame {
-    flex-direction: row;
-  }
-
-  .text-titles {
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
 
   .title {
     text-align: left;

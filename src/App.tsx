@@ -1,6 +1,10 @@
-import FirstFrame from "./Components/FirstFrame";
+import Hero from "./Components/Hero";
 import Skills from "./Components/Skills";
 import {useEffect, useRef} from "react";
+import Experiences from "./Components/Experiences";
+import Education from "./Components/Education";
+import Projects from "./Components/Projects";
+import Navbar from "./Components/Navbar";
 
 
 function App() {
@@ -37,8 +41,12 @@ function App() {
 
   return (
     <div id="app" className="App">
-        <FirstFrame />
-        <Skills />
+      <Navbar />
+      <Hero />
+      <Skills />
+      <Experiences />
+      <Education />
+      <Projects />
     </div>
   )
 }

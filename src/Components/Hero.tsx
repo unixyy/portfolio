@@ -3,12 +3,12 @@ import {faDiscord, faGithub, faTwitter} from "@fortawesome/free-brands-svg-icons
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import pdp from "../assets/pdp.webp";
 
-export default function FirstFrame() {
+export default function Hero() {
   const iconSize = "2x"
   return (
-    <div className={"frame"}>
+    <div className={"frame flex-col-reverse items-center lg:flex-row lg:mx-32 "}>
         <div className={"flex flex-col text-titles gap-4 xl:gap-8"}>
-          <h1 className={"title text-6xl"}>Richard Martin</h1>
+          <h1 className={"title gradHero grad text-6xl"}>Richard Martin</h1>
           <h2 className={"subtitle"}>Hello there ! I'm a <span className={"subtitle-colored"}>French Engineering Student</span> at Polytech Montpellier</h2>
           <div className={"links"}>
             <a href={"https://github.com/unixyy"} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} size={iconSize} /></a>
@@ -17,7 +17,7 @@ export default function FirstFrame() {
             <a href={"mailto:richard.martin@polydev.app"} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faEnvelope} size={iconSize} /></a>
           </div>
       </div>
-      <img src={pdp} alt="pdp" className={"pdp"} />
+      <img src={pdp} alt="pdp" className={"aspect-square w-3/4 lg:w-2/4 rounded-2xl"} />
     </div>
   )
 }
