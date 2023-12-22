@@ -1,12 +1,14 @@
+import React from "react";
+
 interface PropsBentoGrid {
   content: JSX.Element[];
 }
 
 function BentoGrid(props: PropsBentoGrid) {
   return (
-    <div className={"grid grid-cols-12 auto-rows-[76px] gap-4"}>
+    <div className={"flex sm:grid grid-cols-12 auto-rows-[76px] gap-4"}>
       {props.content.map((item, index) => (
-        <>{item}</>
+        <React.Fragment key={index}>{item}</React.Fragment>
       ))}
     </div>
   )
@@ -22,7 +24,7 @@ const Bento : JSX.Element[] = [
 
 export default function Experiences() {
   return (
-    <div className={"frame flex-col"}>
+    <div id={"xp"} className={"frame flex-col"}>
       <div className={"my-4 lg:my-16"}>
         <h1 className={"title gradExperience grad text-4xl"}>Mes Expériences</h1>
       </div>

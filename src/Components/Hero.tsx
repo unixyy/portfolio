@@ -6,7 +6,7 @@ import pdp from "../assets/pdp.webp";
 export default function Hero() {
   const iconSize = "2x"
   return (
-    <div className={"frame flex-col-reverse items-center lg:flex-row lg:mx-32 "}>
+    <div id={"hero"} className={"frame flex-col-reverse items-center lg:flex-row lg:mx-32 "}>
         <div className={"flex flex-col text-titles gap-4 xl:gap-8"}>
           <h1 className={"title gradHero grad text-6xl"}>Richard Martin</h1>
           <h2 className={"subtitle"}>Hello there ! I'm a <span className={"subtitle-colored"}>French Engineering Student</span> at Polytech Montpellier</h2>
