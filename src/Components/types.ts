@@ -1,0 +1,18 @@
+interface PropsTimelineBase {
+    title: string;
+    href: string;
+    date: string;
+    img: string;
+    index?: number;
+}
+
+interface PropsTimeline extends PropsTimelineBase {
+    skills: string[];
+    description: JSX.Element;
+}
+
+interface PropsTimeLine {
+    content: PropsTimelineBase[];
+}
+
+export type { PropsTimeline, PropsTimelineBase, PropsTimeLine };

@@ -3,37 +3,38 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Cubano';
-  src: url('assets/fonts/Cubano.woff');
+    font-family: "Cubano";
+    src: url("assets/fonts/Cubano.woff");
 }
 
 .cubano {
-  font-family: 'Cubano';
+    font-family: "Cubano";
 }
 
 :root {
-  margin : 0;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+    margin: 0;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 
-  color-scheme: light dark;
+    scroll-behavior: smooth;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    color-scheme: light dark;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
 }
 
-
 body {
-
-  margin: 0;
-  display: flex;
-  /*min-width: 320px;*/
-  min-height: 100vh;
+    margin: 0;
+    display: flex;
+    /*min-width: 320px;*/
+    min-height: 100vh;
 }
 
 .subtitle {
@@ -41,130 +42,182 @@ body {
 }
 
 h1 {
-  font-size: 4em;
-  line-height: 1.1;
-  margin-top: 0;
-  margin-bottom: 0;
+    font-size: 4em;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h2 {
-  font-size: 4em;
-  line-height: 1.4;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-  gap: 0.5rem;
+    font-size: 4em;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
 
 .purple {
-  color : hsl(288deg, 60%, 42%, 1);
+    color: hsl(288deg, 60%, 42%, 1);
 }
 
 .btn-purple {
     background-color: hsl(288deg, 60%, 42%, 1);
-    border:0;
+    border: 0;
     color: #ffffff;
 }
 
 .btn-purple:hover {
     background-color: hsl(288, 71%, 31%);
-    border:0;
+    border: 0;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    outline: 4px auto -webkit-focus-ring-color;
 }
 
 .title {
-  line-height: 1.1;
-  font-family: 'Cubano';
-  text-align: center;
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: animate 15s ease infinite;
+    line-height: 1.1;
+    font-family: "Cubano";
+    text-align: center;
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 15s ease infinite;
 }
-
 
 .heading {
-  font-size: 4em;
-  line-height: 1.1;
-  font-family: 'Cubano';
-  text-align: center;
+    font-size: 4em;
+    line-height: 1.1;
+    font-family: "Cubano";
+    text-align: center;
 }
 
-.gradHero{
-  background: hsl(196deg, 72%, 49%, 1);
-  background: linear-gradient(-45deg, hsl(14deg, 82%, 63%, 1), hsl(337deg, 78%, 57%, 1), hsl(196deg, 72%, 49%, 1), hsl(166deg, 72%, 49%, 1));
-  background: -moz-linear-gradient(-45deg, hsl(14deg, 82%, 63%, 1), hsl(337deg, 78%, 57%, 1), hsl(196deg, 72%, 49%, 1), hsl(166deg, 72%, 49%, 1));
-  background: -webkit-linear-gradient(-45deg, hsl(14deg, 82%, 63%, 1), hsl(337deg, 78%, 57%, 1), hsl(196deg, 72%, 49%, 1), hsl(166deg, 72%, 49%, 1));
-
+.gradHero {
+    background: hsl(196deg, 72%, 49%, 1);
+    background: linear-gradient(
+        -45deg,
+        hsl(14deg, 82%, 63%, 1),
+        hsl(337deg, 78%, 57%, 1),
+        hsl(196deg, 72%, 49%, 1),
+        hsl(166deg, 72%, 49%, 1)
+    );
+    background: -moz-linear-gradient(
+        -45deg,
+        hsl(14deg, 82%, 63%, 1),
+        hsl(337deg, 78%, 57%, 1),
+        hsl(196deg, 72%, 49%, 1),
+        hsl(166deg, 72%, 49%, 1)
+    );
+    background: -webkit-linear-gradient(
+        -45deg,
+        hsl(14deg, 82%, 63%, 1),
+        hsl(337deg, 78%, 57%, 1),
+        hsl(196deg, 72%, 49%, 1),
+        hsl(166deg, 72%, 49%, 1)
+    );
 }
 
 .gradSkills {
-  background: hsla(238, 100%, 71%, 1);
-  background: linear-gradient(45deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
-  background: -moz-linear-gradient(45deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
-  background: -webkit-linear-gradient(45deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
+    background: hsla(238, 100%, 71%, 1);
+    background: linear-gradient(
+        45deg,
+        hsla(238, 100%, 71%, 1) 0%,
+        hsla(295, 100%, 84%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        45deg,
+        hsla(238, 100%, 71%, 1) 0%,
+        hsla(295, 100%, 84%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        hsla(238, 100%, 71%, 1) 0%,
+        hsla(295, 100%, 84%, 1) 100%
+    );
 }
 
 .gradExperience {
-  background: hsla(48, 78%, 82%, 1);
-  background: linear-gradient(45deg, hsla(48, 78%, 82%, 1) 0%, hsla(340, 87%, 59%, 1) 100%);
-  background: -moz-linear-gradient(45deg, hsla(48, 78%, 82%, 1) 0%, hsla(340, 87%, 59%, 1) 100%);
-  background: -webkit-linear-gradient(45deg, hsla(48, 78%, 82%, 1) 0%, hsla(340, 87%, 59%, 1) 100%);
+    background: hsla(340, 87%, 59%, 1);
+    background: linear-gradient(
+        45deg,
+        rgb(188, 0, 188) 0%,
+        hsla(340, 87%, 59%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        45deg,
+        rgb(188, 0, 188) 0%,
+        hsla(340, 87%, 59%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        rgb(188, 0, 188) 0%,
+        hsla(340, 87%, 59%, 1) 100%
+    );
 }
 
 .gradEducation {
-  background: hsla(145, 84%, 73%, 1);
-  background: linear-gradient(45deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
-  background: -moz-linear-gradient(45deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
-  background: -webkit-linear-gradient(45deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
+    background: hsla(145, 84%, 73%, 1);
+    background: linear-gradient(
+        45deg,
+        hsla(145, 84%, 73%, 1) 0%,
+        hsla(150, 61%, 48%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        45deg,
+        hsla(145, 84%, 73%, 1) 0%,
+        hsla(150, 61%, 48%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        hsla(145, 84%, 73%, 1) 0%,
+        hsla(150, 61%, 48%, 1) 100%
+    );
 }
 
 .gradProjects {
-  background: hsla(43, 84%, 85%, 1);
-  background: linear-gradient(45deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
-  background: -moz-linear-gradient(45deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
-  background: -webkit-linear-gradient(45deg, hsla(43, 84%, 85%, 1) 0%, hsla(325, 71%, 70%, 1) 50%, hsla(236, 67%, 55%, 1) 100%);
+    background: hsla(325, 71%, 70%, 1);
+    background: linear-gradient(
+        45deg,
+        hsla(43, 84%, 85%, 1) 0%,
+        hsla(325, 71%, 70%, 1) 50%,
+        hsla(236, 67%, 55%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        45deg,
+        hsla(43, 84%, 85%, 1) 0%,
+        hsla(325, 71%, 70%, 1) 50%,
+        hsla(236, 67%, 55%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        hsla(43, 84%, 85%, 1) 0%,
+        hsla(325, 71%, 70%, 1) 50%,
+        hsla(236, 67%, 55%, 1) 100%
+    );
 }
 
-.grad{
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: animate 15s ease infinite;
+.grad {
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 15s ease infinite;
 }
-
-.subtitle-colored {
-  line-height: 1.4;
-  background: linear-gradient(to bottom,  #00ff87 0%, #60efff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.frame {
-  padding-top : 7rem;
-  display: flex;
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 
 /*#blob {*/
 /*  overflow: hidden;;*/
@@ -193,10 +246,9 @@ button:focus-visible {
 /*}*/
 
 .pdp {
-  width : 50%;
-  height : 50%;
-  border-radius: 10px;
-
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
 }
 
 /*.pdp:hover {*/
@@ -205,60 +257,49 @@ button:focus-visible {
 /*}*/
 
 .links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 /* Animations*/
 
 @keyframes animate {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Media 640px */
 
 @media (min-width: 640px) {
-
 }
 
 /* Media 768px */
 
-@media (min-width: 768px) {
-  .frame {
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
-}
-
 /* Media 1024px */
 @media (min-width: 1024px) {
+    h2 {
+        /*flex-direction: column;*/
+        text-align: left;
+        justify-content: left;
+        font-weight: 500;
+        /*gap : 0;*/
+    }
 
-  h2 {
-    /*flex-direction: column;*/
-    text-align : left;
-    justify-content: left;
-    font-weight : 500;
-    /*gap : 0;*/
-  }
+    .title {
+        text-align: left;
+        /*margin-left : 4rem;*/
+        /*margin-right : 4rem;*/
+    }
 
-
-  .title {
-    text-align: left;
-    /*margin-left : 4rem;*/
-    /*margin-right : 4rem;*/
-  }
-
-  .links {
-    justify-content: left;
-  }
+    .links {
+        justify-content: left;
+    }
 }
-

@@ -36,7 +36,7 @@ export default function Navbar() {
         <a className="btn btn-primary cubano hidden lg:flex text-xl">Richard MARTIN</a>
       </div>
       <div className="navbar-center hidden md:flex">
-        <div role="tablist" className="tabs font-normal bg-base-100 tabs-boxed">
+        <div role="tablist" className="tabs font-semibold bg-base-100 tabs-boxed">
           <a role="tab" className="tab tab-active">Accueil</a>
           <a role="tab" className="tab">Compétences</a>
           <a role="tab" className="tab">Expériences</a>
