@@ -30,7 +30,7 @@ interface ListCardSkillsProps {
 
 function ListCardSkills(props: ListCardSkillsProps) {
     return (
-        <div className={"m-4"}>
+        <div className={"flex flex-col items-center"}>
             {props.title ? (
                 <div className={"flex flex-row text-2xl mb-4 font-black"}>
                     {props.title}
@@ -40,16 +40,16 @@ function ListCardSkills(props: ListCardSkillsProps) {
                 {props.skills.map((skill, index) => (
                     <div
                         key={index}
-                        className={"flex flex-row gap-2 justify-between "}
+                        className={"flex flex-row gap-2 "}
                     >
-                        <div className={"text-center font-bold"}>
-                            {skill.name}
-                        </div>
                         <img
                             src={skill.img}
                             alt={skill.name}
                             className={"w-8 h-8 lg:w-8 lg:h-8"}
                         />
+                        <div className={"text-center font-bold"}>
+                            {skill.name}
+                        </div>
                     </div>
                 ))}
             </div>

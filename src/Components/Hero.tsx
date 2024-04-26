@@ -14,12 +14,12 @@ export default function Hero() {
 
     return (
         <div
-            id={"hero"}
+            id={"Hero"}
             className={
-                "flex flex-col-reverse items-center pt-32 lg:flex-row lg:mx-32 "
+                "flex flex-col-reverse justify-around items-center lg:flex-row lg:mx-32 "
             }
         >
-            <div className={"flex flex-col text-titles gap-4 xl:gap-8"}>
+            <div className={"flex flex-col  text-titles gap-4 xl:gap-8"}>
                 <h1 className={"title gradHero grad text-6xl"}>
                     Richard Martin
                 </h1>
