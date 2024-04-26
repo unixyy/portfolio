@@ -1,8 +1,10 @@
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { PropsTimelineBase, PropsTimeLine } from "./types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function TimeLine(props: PropsTimeLine) {
     return (
-        <ul className="timeline timeline-vertical lg:timeline-horizontal lg:flex-row mr-4">
+        <ul className="timeline timeline-vertical lg:timeline-horizontal lg:flex-row-reverse">
             {props.content.map((item, index) => (
                 <TimelineItem
                     key={index}
@@ -11,6 +13,7 @@ function TimeLine(props: PropsTimeLine) {
                     img={item.img}
                     href={item.href}
                     index={index}
+                    bg="bg-primary"
                 />
             ))}
         </ul>
@@ -30,10 +33,9 @@ function TimelineItem(props: PropsTimelineBase) {
             <div className="timeline-middle">
                 <div className="">
                     <div className="rounded-full">
-                        <img
-                            className={"w-8 h-8 text-primary"}
-                            src={props.img}
-                            alt={props.title}
+                        <FontAwesomeIcon
+                            icon={faCircle}
+                            className="text-accent"
                         />
                     </div>
                 </div>

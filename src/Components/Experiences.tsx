@@ -2,7 +2,8 @@ import React from "react";
 import { TimeLine, TimelineItem } from "./Timeline";
 import { PropsTimeline } from "./types";
 
-import git from "../assets/skills/git.svg";
+import lirmm from "../assets/jobs/lirmm.jpeg";
+import greenoxya from "../assets/jobs/greenoxya.png";
 
 // interface PropsBentoGrid {
 //   content: JSX.Element[];
@@ -27,13 +28,10 @@ import git from "../assets/skills/git.svg";
 
 function DisplayExp(props: PropsTimeline) {
     return (
-        <div
-            id={props.href}
-            className="card lg:card-side shadow-xl bg-neutral text-primary-content"
-        >
-            <figure className="lg:w-1/3 aspect-square bg-neutral ">
+        <div id={props.href} className="card lg:card-side shadow-xl bg-neutral">
+            <figure className={"lg:w-1/3 aspect-square " + props.bg}>
                 <img
-                    className={"w-64 h-64"}
+                    className={""}
                     src={props.img}
                     alt={Object.keys(props.img)[0]}
                 />
@@ -44,7 +42,7 @@ function DisplayExp(props: PropsTimeline) {
                     {props.title} <hr className="bg-secondary flex-1" />{" "}
                     {props.date}
                 </h2>
-                <p className="flex flex-col justify-center text-justify font-medium">
+                <p className="flex flex-col justify-center text-justify font-medium px-8">
                     {props.description}
                 </p>
                 <div className="card-actions justify-end">
@@ -67,7 +65,8 @@ const exp: PropsTimeline[] = [
         title: "LIRMM - ShellOnYou",
         href: "lirmm",
         date: "2023",
-        img: git,
+        img: lirmm,
+        bg: "bg-white",
         description: (
             <>
                 Lors de ce stage, J'ai eu plusieurs élements à mettre en place
@@ -95,7 +94,8 @@ const exp: PropsTimeline[] = [
         title: "GreenOxya",
         href: "greenoxya",
         date: "2022",
-        img: git,
+        img: greenoxya,
+        bg: "bg-none",
         description: (
             <>
                 Ipsum optio voluptatibus. Est expedita ea. Sed eos eaque nostrum

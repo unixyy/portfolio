@@ -3,6 +3,7 @@ interface PropsTimelineBase {
     href: string;
     date: string;
     img: string;
+    bg: string;
     index?: number;
 }
 
