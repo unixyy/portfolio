@@ -4,8 +4,8 @@ export default function Contact() {
     return (
         <footer className="footer p-10 bg-neutral text-neutral-content">
             <aside>
-                <img src={r} />
-                <p>Richard Martin<br/>UI/UX Deisgn & FullStack Developer</p>
+                <img src={r} className="h-32 aspect-square"/>
+                <p>Richard Martin<br/>UI/UX Designer & FullStack Developer</p>
             </aside> 
             <nav>
                 <header className="footer-title">Socials</header> 
