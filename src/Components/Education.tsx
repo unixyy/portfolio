@@ -50,6 +50,7 @@ const educationContent: PropsTimeline[] = [
             </>
         ),
         skills: ["courageous", "smartass", "humble"],
+        bg: "bg-primary",
     },
 ];
 
