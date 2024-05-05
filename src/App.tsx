@@ -10,7 +10,7 @@ function App() {
     return (
         <div id="app" className="App">
             <Navbar />
-            <div className="pt-32">
+            <div className="flex flex-col gap-y-8 py-32">
                 <Hero />
                 <Skills />
                 <Experiences />

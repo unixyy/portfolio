@@ -29,7 +29,7 @@ import greenoxya from "../assets/jobs/greenoxya.png";
 function DisplayExp(props: PropsTimeline) {
     return (
         <div id={props.href} className="card lg:card-side shadow-xl bg-neutral">
-            <figure className={"lg:w-1/3 aspect-square " + props.bg}>
+            <figure className={"p-4 lg:w-1/3 aspect-square " + props.bg}>
                 <img
                     className={""}
                     src={props.img}
@@ -49,7 +49,7 @@ function DisplayExp(props: PropsTimeline) {
                     {props.skills.map((item, index) => (
                         <span
                             key={index}
-                            className="badge p-4  font-bold badge-primary "
+                            className="badge badge-outline p-4 font-bold badge-accent "
                         >
                             {item}
                         </span>
@@ -84,40 +84,35 @@ const exp: PropsTimeline[] = [
                         Instauration d'un architecture en micro-services et
                         conversion des anciens modules en micro-services.
                     </li>
-                    <li>Travail en équipe réduite (2 personnes)</li>
+                    <li>Travail en équipe réduite (4 personnes)</li>
                 </ul>
             </>
         ),
-        skills: ["courageous", "smartass", "humble"],
+        skills: ["Docker", "Linux", "Optimisation de mémoire", "ReactJS"],
     },
     {
         title: "GreenOxya",
         href: "greenoxya",
         date: "2022",
         img: greenoxya,
-        bg: "bg-none",
+        bg: "bg-green-800",
         description: (
             <>
-                Ipsum optio voluptatibus. Est expedita ea. Sed eos eaque nostrum
-                aliquid ullam doloribus beatae dolor nostrum. Sequi praesentium
-                eveniet aut aut eligendi natus rerum ipsum. Soluta voluptatibus
-                blanditiis cumque ratione nulla. Atque nisi minima autem
-                occaecati labore amet accusamus. Error molestias nisi impedit{" "}
-                <b>rem occaecati</b>. Vero aspernatur aut. Ad nulla quisquam.
-                Molestias quam nam quis temporibus cumque quasi temporibus
-                doloremque ipsam. Tempora accusantium itaque. Pariatur maiores
-                aperiam eaque placeat sit facilis repellendus. Hic doloribus ad.
-                Dignissimos dolores quam sint laudantium dicta nemo quas. At
-                quae reiciendis beatae.
+                <ul className="list-disc">
+                    <li>Travail d'optimisation de recherche de base de données</li>
+                    <li>création d'un outil de modification de multiples bases de données, sous forme d'une application web</li>
+                    <li>amélioration de l'UI/UX sur la plateforme cliente</li>
+
+                </ul>
             </>
         ),
-        skills: ["courageous", "smartass", "humble"],
+        skills: ["MySQL", "ReactJS", "UI/UX"],
     },
 ];
 
 export default function Experiences() {
     return (
-        <div id={"xp"} className={"frame flex-col"}>
+        <div id={"experiences"} className={"frame flex-col"}>
             <div className={"m-4 lg:m-16"}>
                 <h1 className={"title gradExperience grad text-4xl"}>
                     Mes Expériences
@@ -127,7 +122,7 @@ export default function Experiences() {
                 <TimeLine content={exp} />
             </div>
 
-            <ul className={"flex flex-col gap-4 lg:gap-8 sm:m-8 lg:m-16"}>
+            <ul className={"flex flex-col gap-4 lg:gap-8 sm:m-8 xl:m-16"}>
                 {exp.map((item, index) => (
                     <li key={index} className=" lg:mx-20">
                         <DisplayExp {...item} />

@@ -35,7 +35,7 @@ function TimelineItem(props: PropsTimelineBase) {
                     <div className="rounded-full">
                         <FontAwesomeIcon
                             icon={faCircle}
-                            className="text-accent"
+                            className="text-secondary"
                         />
                     </div>
                 </div>

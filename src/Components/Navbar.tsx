@@ -1,8 +1,40 @@
+import { useEffect } from "react";
 import r from "../assets/logos/R_Black.svg";
 
 export default function Navbar() {
+    
+    useEffect(() => {
+
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const sections = ["navbar", "skills", "experiences", "education", "projects", "contact"];
+
+            sections.forEach((section, index) => {
+            const nav = document.getElementById(`nav${index}`);
+            if (nav) {
+                if (scrollPosition >= document.getElementById(section)?.offsetTop!-100 && scrollPosition < document.getElementById(section)?.offsetTop! + document.getElementById(section)?.offsetHeight!-100) {
+                nav.classList.add("btn-ghost"); // Remove the "btn-ghost" class if scroll position is within the section
+                } else {
+                nav.classList.remove("btn-ghost"); // Add the "btn-ghost" class if scroll position is outside the section
+                }
+            }
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+    })
+
+    const ScrollToDiv = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+
     return (
-        <div className="navbar fixed z-10 xl:py-6 xl:px-16 bg-base-100 lg:bg-transparent">
+        <div id="navbar" className="navbar fixed z-10 lg:px-8 lg:py-6 xl:px-16 bg-base-100 lg:bg-transparent">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div
@@ -46,44 +78,32 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
-                <a className="py-2 px-4 w-20 rounded-full backdrop-blur-xl cubano hidden lg:flex text-2xl">
-                    <svg
-                        viewBox="0 0 284 364"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                    >
-                        <path
-                            className="stroke-primary"
-                            d="M113.929 331.194C113.929 331.194 14.0444 163.552 34.8516 96.6957C55.6588 29.8389 179.498 -5.70271 227.568 93.5125C288.681 219.652 100.037 207.641 160.264 233.238C220.492 258.835 251.106 271.296 251.106 271.296"
-                            stroke="white"
-                            stroke-width="64"
-                            stroke-linecap="round"
-                        />
-                    </svg>
+                <a className="btn btn-outline bg-base-100 btn-primary rounded-full cubano hidden lg:flex text-2xl">
+                    Richard
                 </a>
             </div>
             <div className="rounded-full navbar-center hidden md:flex">
                 <div className=" flex flex-row  border-2 border-primary tabs font-semibold place-items-center  rounded-full backdrop-blur-xl bg-base-100/30 tabs-boxed">
-                    <a className="rounded-l-full bg-primary text-white px-4 py-2">
+                    <a id="nav0" onClick={() => {ScrollToDiv("hero")}} className="rounded-l-full btn btn-primary text-white px-4 py-2">
                         Accueil
                     </a>
-                    <a className=" bg-primary text-white px-4 py-2">
+                    <a id="nav1" onClick={() => {ScrollToDiv("skills")}} className=" btn btn-primary toggle-primary rounded-none text-white px-4 py-2">
                         Compétences
                     </a>
-                    <a className=" bg-primary text-white px-4 py-2">
+                    <a id="nav2" onClick={() => {ScrollToDiv("experiences")}} className="btn btn-primary rounded-none text-white px-4 py-2">
                         Expériences
                     </a>
-                    <a className=" bg-primary text-white px-4 py-2">
+                    <a id="nav3" onClick={() => {ScrollToDiv("education")}} className=" btn btn-primary rounded-none text-white px-4 py-2">
                         Formation
                     </a>
-                    <a className=" bg-primary text-white px-4 py-2">Projets</a>
-                    <a className="rounded-r-full bg-primary text-white px-4 py-2">
+                    <a id="nav4" onClick={() => {ScrollToDiv("projects")}} className=" btn btn-primary rounded-none text-white px-4 py-2">Projets</a>
+                    <a id="nav5" onClick={() => {ScrollToDiv("contact")}} className="rounded-r-full btn btn-primary text-white px-4 py-2">
                         Contact
                     </a>
                 </div>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-primary">Mon CV</a>
+                <a className="btn btn-outline bg-base-100 btn-secondary cubano rounded-full text-2xl">Mon CV</a>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import r from "../assets/logos/R_Black.svg"
 
 export default function Contact() {
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content">
+        <footer id="contact" className="footer p-10 bg-neutral text-neutral-content">
             <aside>
                 <img src={r} className="h-32 aspect-square"/>
                 <p>Richard Martin<br/>UI/UX Designer & FullStack Developer</p>

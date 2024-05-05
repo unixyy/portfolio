@@ -14,7 +14,7 @@ export default function Hero() {
 
     return (
         <div
-            id={"Hero"}
+            id={"hero"}
             className={
                 "flex flex-col-reverse justify-around items-center lg:flex-row lg:mx-32 "
             }
@@ -24,7 +24,7 @@ export default function Hero() {
                     Richard Martin
                 </h1>
                 <h2 className={"text-2xl font-medium items-center"}>
-                    Hello there ! I'm a
+                    Hello there !
                     <motion.div
                         className={
                             "text-2xl p-2 bg-primary rounded-lg text-white"
@@ -41,9 +41,9 @@ export default function Hero() {
                             },
                         }}
                     >
-                        French Engineering Student
+                        I'm a UI/UX Designer in the making
                     </motion.div>
-                    at Polytech Montpellier
+                    at ETS Montréal & Polytech Montpellier
                 </h2>
                 <div className={"links"}>
                     <a
