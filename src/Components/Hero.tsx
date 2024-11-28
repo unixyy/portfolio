@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faDiscord,
@@ -16,7 +15,7 @@ export default function Hero() {
         <div
             id={"hero"}
             className={
-                "flex flex-col-reverse justify-around items-center lg:flex-row mx-auto h-screen"
+                "flex flex-col-reverse justify-center items-center lg:flex-row mx-auto h-screen"
             }
         >
             <div className={"flex flex-col justify-center items-center text-titles gap-4 xl:gap-8"}>
@@ -25,6 +24,7 @@ export default function Hero() {
                 </h1>
                 <h2 className={"text-2xl font-medium items-center"}>
                     Hello there !
+            
                     <motion.div
                         className={
                             "text-2xl p-2 bg-primary rounded-lg text-white"
