@@ -13,8 +13,7 @@ function TimeLine(props: PropsTimeLine) {
                     img={item.img}
                     href={item.href}
                     index={index}
-                    bg="bg-primary"
-                />
+                    bg="bg-primary" reverse={false}                />
             ))}
         </ul>
     );

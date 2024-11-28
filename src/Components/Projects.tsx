@@ -5,7 +5,7 @@ import git from "../assets/skills/git.svg"
 function Divider(props: PropsTimeline) {
   return (
     <div className="flex flex-row">
-      <button onClick={() => document.getElementById("my_modal_"+props.href)!.showModal()} className="btn btn-neutral flex items-center justify-center size-96 aspect-square p-8 bg-neutral dark:bg-neutral-200 rounded-box">
+      <button onClick={() => (document.getElementById("my_modal_"+props.href) as HTMLDialogElement).showModal()} className="btn btn-neutral flex items-center justify-center size-96 aspect-square p-8 bg-neutral dark:bg-neutral-200 rounded-box">
         <img className="" src={props.img} alt={props.title} />
       </button>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
@@ -44,6 +44,7 @@ const projectsContent: PropsTimeline[] = [
     ),
     skills: ["courageous", "smartass", "humble"],
     bg: "bg-primary",
+    reverse: false
   },
   {
     title: "Projet 2",
@@ -53,6 +54,7 @@ const projectsContent: PropsTimeline[] = [
     description: <>test</>,
     skills: ["courageous", "smartass", "humble"],
     bg: "bg-primary",
+    reverse: false
   },
 ];
 
