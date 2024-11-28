@@ -5,6 +5,7 @@ interface PropsTimelineBase {
     img: string;
     bg: string;
     index?: number;
+    reverse: boolean;
 }
 
 interface PropsTimeline extends PropsTimelineBase {

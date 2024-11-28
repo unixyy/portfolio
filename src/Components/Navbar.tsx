@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import r from "../assets/logos/R_Black.svg";
+import { faDownload, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar() {
     
@@ -7,15 +9,16 @@ export default function Navbar() {
 
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const sections = ["navbar", "skills", "experiences", "education", "projects", "contact"];
+            const sections = ["hero", "skills", "experiences", "education", "projects", "contact"];
 
             sections.forEach((section, index) => {
             const nav = document.getElementById(`nav${index}`);
             if (nav) {
-                if (scrollPosition >= document.getElementById(section)?.offsetTop!-100 && scrollPosition < document.getElementById(section)?.offsetTop! + document.getElementById(section)?.offsetHeight!-100) {
-                nav.classList.add("btn-ghost"); // Remove the "btn-ghost" class if scroll position is within the section
+                const thirdScreenHeight = window.innerHeight / 3;
+                if (scrollPosition >= document.getElementById(section)?.offsetTop! - thirdScreenHeight && scrollPosition < document.getElementById(section)?.offsetTop! + document.getElementById(section)?.offsetHeight! - thirdScreenHeight) {
+                    nav.classList.add("btn-secondary"); // Add the "btn-secondary" class if scroll position is within the section
                 } else {
-                nav.classList.remove("btn-ghost"); // Add the "btn-ghost" class if scroll position is outside the section
+                    nav.classList.remove("btn-secondary"); // Remove the "btn-secondary" class if scroll position is outside the section
                 }
             }
             });
@@ -32,6 +35,19 @@ export default function Navbar() {
         }
     }
 
+
+    interface NavElement {
+        name: string;
+        reference: string;
+    }
+    const navElements: NavElement[] = [
+        { name: "Accueil", reference: "hero" },
+        { name: "Compétences", reference: "skills" },
+        { name: "Expériences", reference: "experiences" },
+        { name: "Formation", reference: "education" },
+        { name: "Projets", reference: "projects" },
+        { name: "Contact", reference: "contact" }
+    ];
 
     return (
         <div id="navbar" className="navbar fixed z-10 lg:px-8 lg:py-6 xl:px-16 bg-base-100 lg:bg-transparent">
@@ -78,33 +94,26 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
-                <a className="btn btn-outline bg-base-100 btn-primary rounded-full cubano hidden lg:flex text-2xl">
-                    Richard
-                </a>
             </div>
-            <div className="rounded-full navbar-center hidden md:flex">
-                <div className=" flex flex-row  border-2 border-primary tabs font-semibold place-items-center  rounded-full backdrop-blur-xl bg-base-100/30 tabs-boxed">
-                    <a id="nav0" onClick={() => {ScrollToDiv("hero")}} className="rounded-l-full btn btn-primary text-white px-4 py-2">
-                        Accueil
-                    </a>
-                    <a id="nav1" onClick={() => {ScrollToDiv("skills")}} className=" btn btn-primary toggle-primary rounded-none text-white px-4 py-2">
-                        Compétences
-                    </a>
-                    <a id="nav2" onClick={() => {ScrollToDiv("experiences")}} className="btn btn-primary rounded-none text-white px-4 py-2">
-                        Expériences
-                    </a>
-                    <a id="nav3" onClick={() => {ScrollToDiv("education")}} className=" btn btn-primary rounded-none text-white px-4 py-2">
-                        Formation
-                    </a>
-                    <a id="nav4" onClick={() => {ScrollToDiv("projects")}} className=" btn btn-primary rounded-none text-white px-4 py-2">Projets</a>
-                    <a id="nav5" onClick={() => {ScrollToDiv("contact")}} className="rounded-r-full btn btn-primary text-white px-4 py-2">
-                        Contact
-                    </a>
+            <div className="rounded-full navbar-center hidden md:flex md:flex-col md:gap-y-4">
+                <div className=" flex flex-row tabs font-semibold place-items-center  rounded-full backdrop-blur-xl bg-base-100/30 tabs-boxed">
+                    {navElements.map((element, index) => (
+                        <a
+                            key={index}
+                            id={`nav${index}`}
+                            onClick={() => ScrollToDiv(element.reference)}
+                            className={`flex content-center btn btn-primary poppins text-lg uppercase font-black p-8 ${index === 0 ? "rounded-l-full" : ""} ${index === navElements.length - 1 ? "rounded-r-full" : ""} ${index !== 0 && index !== navElements.length - 1 ? "rounded-none" : ""}`}
+                        >
+                            {element.name}
+                        </a>
+                    ))}
+                </div>
+                <div className="flex gap-4">
+                    <a className="btn btn-secondary  border-2 poppins uppercase rounded-full text-lg font-bold"><FontAwesomeIcon icon={faEnvelope} /> Email</a>
+                    <a className="btn btn-accent  border-2 poppins uppercase rounded-full text-lg font-bold"><FontAwesomeIcon icon={faDownload} /> CV</a>
                 </div>
             </div>
-            <div className="navbar-end">
-                <a className="btn btn-outline bg-base-100 btn-secondary cubano rounded-full text-2xl">Mon CV</a>
-            </div>
+            <div className="navbar-end"></div>
         </div>
     );
 }

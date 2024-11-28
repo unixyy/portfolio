@@ -4,6 +4,7 @@ import { PropsTimeline } from "./types";
 
 import lirmm from "../assets/jobs/lirmm.jpeg";
 import greenoxya from "../assets/jobs/greenoxya.png";
+import DisplayExp from "./DisplayExp";
 
 // interface PropsBentoGrid {
 //   content: JSX.Element[];
@@ -26,40 +27,6 @@ import greenoxya from "../assets/jobs/greenoxya.png";
 //   <div className={"rounded-md bg-blue-500 col-span-2 row-span-2 "}>là ça va bon</div>,
 // ]
 
-function DisplayExp(props: PropsTimeline) {
-    return (
-        <div id={props.href} className="card lg:card-side shadow-xl bg-neutral">
-            <figure className={"p-4 lg:w-1/3 aspect-square " + props.bg}>
-                <img
-                    className={""}
-                    src={props.img}
-                    alt={Object.keys(props.img)[0]}
-                />
-            </figure>
-            <hr className="vertical" />
-            <div className="card-body lg:w-2/3">
-                <h2 className="card-title">
-                    {props.title} <hr className="bg-secondary flex-1" />{" "}
-                    {props.date}
-                </h2>
-                <p className="flex flex-col justify-center text-justify font-medium px-8">
-                    {props.description}
-                </p>
-                <div className="card-actions justify-end">
-                    {props.skills.map((item, index) => (
-                        <span
-                            key={index}
-                            className="badge badge-outline p-4 font-bold badge-accent "
-                        >
-                            {item}
-                        </span>
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-}
-
 const exp: PropsTimeline[] = [
     {
         title: "LIRMM - ShellOnYou",
@@ -68,26 +35,11 @@ const exp: PropsTimeline[] = [
         img: lirmm,
         bg: "bg-white",
         description: (
-            <>
-                Lors de ce stage, J'ai eu plusieurs élements à mettre en place
-                tels que :
-                <ul className="list-disc">
-                    <li>
-                        Implémentation d'un terminal de système d'exploitation
-                        personnalisable au sein de l'application web.
-                    </li>
-                    <li>
-                        Mise en place d'un système de test E2E (end-to-end,
-                        CypressJS) pour le renforcement de la pipeline CI/CD.
-                    </li>
-                    <li>
-                        Instauration d'un architecture en micro-services et
-                        conversion des anciens modules en micro-services.
-                    </li>
-                    <li>Travail en équipe réduite (4 personnes)</li>
-                </ul>
-            </>
+            <div>
+                Lors de ce stage, j’ai travaillé sur plusieurs projets importants : j’ai implémenté un <span className="text-accent font-bold w-fit">terminal UNIX</span> personnalisable au sein de l’application web, ce qui a permis une meilleure interaction utilisateur. J’ai également mis en place un système de test end-to-end (E2E) avec CypressJS pour renforcer la pipeline CI/CD et garantir une meilleure qualité des déploiements. De plus, j’ai contribué à l’instauration d’une architecture en micro-services et à la conversion des anciens modules en micro-services, facilitant ainsi la scalabilité du projet. Le tout réalisé en équipe réduite de 4 personnes.
+            </div>
         ),
+        reverse: false,
         skills: ["Docker", "Linux", "Optimisation de mémoire", "ReactJS"],
     },
     {
@@ -106,6 +58,7 @@ const exp: PropsTimeline[] = [
                 </ul>
             </>
         ),
+        reverse: false,
         skills: ["MySQL", "ReactJS", "UI/UX"],
     },
 ];
@@ -118,13 +71,13 @@ export default function Experiences() {
                     Mes Expériences
                 </h1>
             </div>
-            <div className={"flex w-screen justify-center"}>
+            <div className={"flex justify-center"}>
                 <TimeLine content={exp} />
             </div>
 
             <ul className={"flex flex-col gap-4 lg:gap-8 sm:m-8 xl:m-16"}>
                 {exp.map((item, index) => (
-                    <li key={index} className=" lg:mx-20">
+                    <li key={index} className="lg:mx-20">
                         <DisplayExp {...item} />
                     </li>
                 ))}

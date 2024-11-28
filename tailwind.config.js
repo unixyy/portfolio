@@ -7,7 +7,7 @@ export default {
                 light: {
                     ...require("daisyui/src/theming/themes")["light"],
                     primary: "#9333ea",
-                    secondary: "#f3f4f6",
+                    secondary: "#dfdfdf",
                     accent: "#93E13A",
                     neutral: "#efefef",
                     "base-100": "#fefefe",
@@ -19,7 +19,7 @@ export default {
                 dark: {
                     ...require("daisyui/src/theming/themes")["dark"],
                     primary: "#9333ea",
-                    secondary: "#f3f4f6",
+                    secondary: "#dfdfdf",
                     accent: "#93E13A",
                     neutral: "#343434",
                     "base-100": "#27272A",

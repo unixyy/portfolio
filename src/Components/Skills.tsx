@@ -17,6 +17,7 @@ import tailwind from "../assets/skills/tailwind.svg";
 import threejs from "../assets/skills/threejs.svg";
 import nest from "../assets/skills/nest.svg";
 import React from "react";
+import { LayoutGroup, motion } from "framer-motion";
 
 type Skill = {
     name: string;
@@ -30,45 +31,40 @@ interface ListCardSkillsProps {
 
 function ListCardSkills(props: ListCardSkillsProps) {
     return (
-        <div className={"flex flex-col items-center"}>
-            {props.title ? (
-                <div className={"flex flex-row text-2xl mb-4 font-black"}>
+        <div className="flex flex-row gap-8">
+            <div className={"flex gap-8"}>
+                <h2 className={"uppercase poppins font-black"}>
                     {props.title}
-                </div>
-            ) : null}
-            <div className={"flex flex-col gap-y-4 gap-x-4 lg:gap-x-8 "}>
-                {props.skills.map((skill, index) => (
-                    <div
-                        key={index}
-                        className={"flex flex-row gap-2 "}
+                </h2>
+                {props.skills.map((skill) => (
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className={"flex flex-col items-center gap-4"}
                     >
                         <img
                             src={skill.img}
                             alt={skill.name}
-                            className={"w-8 h-8 lg:w-8 lg:h-8"}
+                            className={"w-24 h-24"}
                         />
-                        <div className={"text-center font-bold"}>
-                            {skill.name}
-                        </div>
-                    </div>
+                        <p className="font-semibold">{skill.name}</p>
+                    </motion.div>
                 ))}
             </div>
         </div>
     );
 }
 
+
 export default function Skills() {
     const skills: Skill[] = [
-        { name: "HTML", img: html },
         { name: "Sass", img: sass },
         { name: "TypeScript", img: ts },
+        { name: "HTML", img: html },
         { name: "C#", img: csharp },
-        { name: "C++", img: cpp },
         { name: "Java", img: java },
         { name: "Swift", img: swift },
         { name: "Python", img: python },
-        { name: "R", img: r },
-        { name: "Redux", img: "git" },
     ];
 
     const dbs: Skill[] = [
@@ -79,19 +75,8 @@ export default function Skills() {
 
     const frameworks: Skill[] = [
         { name: "React", img: reactimg },
-        { name: "VueJS", img: vuejs },
-        { name: "Framer", img: git },
-        // { name: "Webflow", img: git },
-        // { name: "Spline", img: git },
         { name: "TailwindCSS", img: tailwind },
-        { name: "ThreeJS", img: threejs },
-        { name: "NestJS", img: nest },
-    ];
-
-    const environments: Skill[] = [
-        { name: "Macos", img: git },
-        { name: "Linux", img: git },
-        { name: "Windows", img: git },
+        { name: ".NET Core", img: nest },
     ];
 
     const gameEngine: Skill[] = [];
@@ -99,12 +84,7 @@ export default function Skills() {
     const tools: Skill[] = [
         { name: "Git", img: git },
         { name: "Docker", img: git },
-        // {name: "VSCode", img: git},
-        // {name: "IntelliJ", img: git},
-        // {name: "UML", img: git},
-        { name: "Postman", img: git },
         { name: "Figma", img: git },
-        { name: "Unity", img: git },
     ];
 
     return (
@@ -116,13 +96,12 @@ export default function Skills() {
             </div>
             <div
                 className={
-                    "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center mx-4 lg:mx-32"
+                    "justify-start items-center flex flex-col gap-x-8 gap-y-20"
                 }
             >
                 <ListCardSkills skills={skills} title={"Langages"} />
                 <ListCardSkills skills={frameworks} title={"Frameworks"} />
                 <ListCardSkills skills={dbs} title={"Databases"} />
-                <ListCardSkills skills={environments} title={"OS"} />
                 <ListCardSkills skills={tools} title={"Autres"} />
             </div>
         </div>

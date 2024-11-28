@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "Cubano";
-    src: url("assets/fonts/Cubano.woff");
-}
-
-.cubano {
-    font-family: "Cubano";
+.poppins {
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
-    margin: 0;
+    margin: 0 0;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -31,7 +26,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 0 0;
     display: flex;
     /*min-width: 320px;*/
     min-height: 100vh;
@@ -93,9 +88,12 @@ button:focus-visible {
 
 .title {
     line-height: 1.1;
-    font-family: "Cubano";
+    font-family: "Poppins";
+    font-weight: 900;
+    text-transform: uppercase;
     text-align: center;
     background-size: 400% 400%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate 15s ease infinite;
@@ -104,7 +102,7 @@ button:focus-visible {
 .heading {
     font-size: 4em;
     line-height: 1.1;
-    font-family: "Cubano";
+    font-family: "Poppins";
     text-align: center;
 }
 
